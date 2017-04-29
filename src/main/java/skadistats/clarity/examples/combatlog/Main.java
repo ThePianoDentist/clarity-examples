@@ -5,15 +5,20 @@ import org.joda.time.format.PeriodFormatter;
 import org.joda.time.format.PeriodFormatterBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import skadistats.clarity.event.Insert;
 import skadistats.clarity.model.CombatLogEntry;
 import skadistats.clarity.processor.gameevents.OnCombatLogEntry;
 import skadistats.clarity.processor.runner.SimpleRunner;
 import skadistats.clarity.source.MappedFileSource;
 import skadistats.clarity.wire.common.proto.DotaUserMessages;
+import skadistats.clarity.processor.runner.Context;
 
 public class Main {
 
     private final Logger log = LoggerFactory.getLogger(Main.class.getPackage().getClass());
+
+    @Insert
+    private Context ctx;
 
     private final PeriodFormatter GAMETIME_FORMATTER = new PeriodFormatterBuilder()
         .minimumPrintedDigits(2)
@@ -41,7 +46,7 @@ public class Main {
 
     @OnCombatLogEntry
     public void onCombatLogEntry(CombatLogEntry cle) {
-        String time = "[" + GAMETIME_FORMATTER.print(Duration.millis((int) (1000.0f * cle.getTimestamp())).toPeriod()) + "]";
+        String time = "[" + ctx.getTick() + "]";
         switch (cle.getType()) {
             case DOTA_COMBATLOG_DAMAGE:
                 log.info("{} {} hits {}{} for {} damage{}",
