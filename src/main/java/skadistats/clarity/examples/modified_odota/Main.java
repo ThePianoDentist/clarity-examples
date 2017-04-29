@@ -1,4 +1,4 @@
-package skadistats.clarity.examples.odota;
+package skadistats.clarity.examples.modified_odota;
 
 import java.io.IOException;
 import java.util.ArrayList;

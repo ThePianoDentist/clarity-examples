@@ -1,6 +1,6 @@
 // Originally from https://github.com/odota/parser/blob/master/src/main/java/opendota/Parse.java
 
-package skadistats.clarity.examples.odota;
+package skadistats.clarity.examples.modified_odota;
 
 import com.google.gson.Gson;
 import com.google.protobuf.GeneratedMessage;
