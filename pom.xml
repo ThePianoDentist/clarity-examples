@@ -120,10 +120,10 @@
             </properties>
         </profile>
         <profile>
-            <id>odota</id>
+            <id>modified_odota</id>
             <activation><activeByDefault>true</activeByDefault></activation>
             <properties>
-                <exampleName>odota</exampleName>
+                <exampleName>modified_odota</exampleName>
             </properties>
         </profile>
         <profile>
