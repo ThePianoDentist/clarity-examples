@@ -165,7 +165,7 @@ public class Parse {
 
     private String output(Entry e) {
         e.matchID = this.matchID;
-        return (g.toJson(e) + "\n");
+        return (g.toJson(e));
     }
 
     //@OnMessage(GeneratedMessage.class)
