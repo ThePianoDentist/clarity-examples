@@ -36,7 +36,7 @@ import java.util.regex.Pattern;
 
 public class Parse {
 
-    private static final Logger log = LoggerFactory.getLogger(skadistats.clarity.examples.smoketimings.Main.class.getPackage().getClass());
+    private static final Logger log = LoggerFactory.getLogger(skadistats.clarity.examples.modified_odota.Main.class.getPackage().getClass());
     private static final Pattern ID_DOT_DEM = Pattern.compile("(\\d+).DEM", Pattern.CASE_INSENSITIVE);
 
     private class Entry { //
